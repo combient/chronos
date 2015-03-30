@@ -396,7 +396,7 @@ you can also use a url in the command field, if your mesos was compiled with cUR
 | scheduleTimeZone    | The time zone for the given schedule.									 							     | -                              |
 | parents             | An array of parent jobs for a dependent job.  If specified, `schedule` must not be specified.            | -                              |
 | runAsUser           | Mesos will run the job as this user, if specified.                                                       | `--user`                       |
-| container           | This contains the subfields for the container, type (req), image (req), network (optional) and volumes (optional).          | -                              |
+| container           | This contains the subfields for the container, type (req), image (req), network (optional), volumes (optional) and privileged (optional).          | -                              |
 | environmentVariables| An array of environment variables passed to the Mesos executor. For Docker containers, these are also passed to Docker using the -e flag. | -                              |
 
 ### Sample Job

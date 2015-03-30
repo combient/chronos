@@ -124,6 +124,8 @@ class JobSerializer extends JsonSerializer[BaseJob] {
         json.writeEndObject()
       }
       json.writeEndArray()
+      json.writeFieldName("privileged")
+      json.writeBoolean(baseJob.container.privileged)
       json.writeEndObject()
     }
 

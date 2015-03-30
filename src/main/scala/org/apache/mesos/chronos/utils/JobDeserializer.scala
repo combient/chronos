@@ -150,7 +150,13 @@ class JobDeserializer extends JsonDeserializer[BaseJob] {
             Volume(hostPath, node.get("containerPath").asText, mode)
         }.foreach(volumes.add)
       }
-      container = DockerContainer(containerNode.get("image").asText, volumes, networkMode)
+
+      var privileged: Boolean = false
+      if (containerNode.has("privileged")) {
+        privileged = containerNode.get("privileged").asBoolean
+      }
+
+      container = DockerContainer(containerNode.get("image").asText, volumes, networkMode, privileged)
     }
 
     var parentList = scala.collection.mutable.ListBuffer[String]()

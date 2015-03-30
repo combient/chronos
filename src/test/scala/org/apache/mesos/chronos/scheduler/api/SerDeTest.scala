@@ -27,7 +27,7 @@ class SerDeTest extends SpecificationWithJUnit {
         Volume(None, "container/dir", None)
       )
 
-      val container = DockerContainer("dockerImage", volumes, NetworkMode.BRIDGE)
+      val container = DockerContainer("dockerImage", volumes, NetworkMode.BRIDGE, true)
 
       val arguments = Seq(
         "-testOne"
